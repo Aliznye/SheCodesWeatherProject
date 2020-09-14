@@ -54,7 +54,7 @@ function displayTemperature(response) {
     date.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute(
         "src", 
-        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
 }
 
@@ -68,7 +68,7 @@ function displayForecast(response) {
         ${formatHours(forecast.dt * 1000)}
     </h2>
     <img
-    src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
+    src ="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
     />
     <div class = "weather-forecast-temperature">
         <strong>${Math.round(forecast.main.temp_max)}°</strong>|${Math.round(forecast.main.temp_min)}°
@@ -83,7 +83,7 @@ function displayForecast(response) {
         ${formatHours(forecast.dt * 1000)}
     </h2>
     <img
-    src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
+    src ="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
     />
     <div class = "weather-forecast-temperature">
         <strong>${Math.round(forecast.main.temp_max)}°</strong>|${Math.round(forecast.main.temp_min)}°
@@ -98,7 +98,7 @@ function displayForecast(response) {
        ${formatHours(forecast.dt * 1000)}
    </h2>
    <img
-   src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
+   src ="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
    />
    <div class = "weather-forecast-temperature">
        <strong>${Math.round(forecast.main.temp_max)}°</strong>|${Math.round(forecast.main.temp_min)}°
@@ -113,7 +113,7 @@ function displayForecast(response) {
       ${formatHours(forecast.dt * 1000)}
   </h2>
   <img
-  src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
+  src ="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
   />
   <div class = "weather-forecast-temperature">
       <strong>${Math.round(forecast.main.temp_max)}°</strong>|${Math.round(forecast.main.temp_min)}°
@@ -128,7 +128,7 @@ function displayForecast(response) {
      ${formatHours(forecast.dt * 1000)}
  </h2>
  <img
- src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
+ src ="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
  />
  <div class = "weather-forecast-temperature">
      <strong>${Math.round(forecast.main.temp_max)}°</strong>|${Math.round(forecast.main.temp_min)}°
@@ -143,7 +143,7 @@ function displayForecast(response) {
     ${formatHours(forecast.dt * 1000)}
 </h2>
 <img
-src ="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
+src ="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" width = "40";
 />
 <div class = "weather-forecast-temperature">
     <strong>${Math.round(forecast.main.temp_max)}°</strong>|${Math.round(forecast.main.temp_min)}°
@@ -157,7 +157,7 @@ function search(city) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayTemperature); 
 
-    apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
     axios.get(apiUrl).then(displayForecast);
 }
 
