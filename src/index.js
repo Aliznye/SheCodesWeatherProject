@@ -45,10 +45,18 @@ function displayTemperature(response) {
     );
 }
 
-let apiKey = "617eafff664cc7b609a6d20494a9e0cf";
-let city = "London";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+function search(city) {
+    let apiKey = "617eafff664cc7b609a6d20494a9e0cf";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayTemperature); 
+}
+
+function submit(event) {
+    event.preventDefault();
+    let cityInput = document.querySelector("#city-input");
+    search(cityInput.value);
+}
 
 
-
-axios.get(apiUrl).then(displayTemperature);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submit);
