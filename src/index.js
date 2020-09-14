@@ -26,12 +26,12 @@ function displayTemperature(response) {
     let currentTemp = Math.round(response.data.main.temp)
     let temperature = document.querySelector("#temperature");
     let description = document.querySelector("#description");
-    let precepitation = document.querySelector("#precipitation");
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#wind-speed");
     let feelsTemp = Math.round(response.data.main.feels_like);
     let feelsLike = document.querySelector("#feels-like");
-    let date = document.querySelector("#date")
+    let date = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
     h1.innerHTML = (response.data.name);
     temperature.innerHTML = (currentTemp);
     description.innerHTML = (response.data.weather[0].main);
@@ -39,10 +39,15 @@ function displayTemperature(response) {
     wind.innerHTML = (response.data.wind.speed);
     feelsLike.innerHTML = (feelsTemp);
     date.innerHTML = formatDate(response.data.dt * 1000);
+    iconElement.setAttribute(
+        "src", 
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 let apiKey = "617eafff664cc7b609a6d20494a9e0cf";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=imperial`;
+let city = "London";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 
 
