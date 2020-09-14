@@ -1,6 +1,6 @@
 .app-border {
     max-width: 600px;
-    margin: 30px auto;
+    margin-top: 50px;
     padding: 20px;
     border: 1px solid rgb(152, 152, 211);
     border-radius: 5px;
@@ -11,6 +11,7 @@ h1 {
     font-size: 24px;
     font-weight: 400;
     line-height: 28px;
+    padding: 0;
 }
 ul {
     margin: 0;
@@ -23,11 +24,29 @@ li {
     font-size: 14px;
     font-weight: 200;
     text-align: left;
-    line-height: 23px;
+    line-height: 15px;
 }
 
 .source {
     font-family: monospace;
     font-size: 10px;
-    margin-top: 40px;
+}
+
+.current-weather-overview {
+margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.weather-temperature img {
+    margin-right: 10px
+}
+.weather-temperature strong {
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.weather-temperature .units {
+    position: relative;
+    font-size: 14px;
+    top: -17px;
 }
