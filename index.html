@@ -6,6 +6,8 @@
     <title>Allison's Weather App Project</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     
 </head>
 <body>
@@ -19,7 +21,7 @@
             <li> 
                 Friday 5pm
             </li>
-            <li>
+            <li id="description">
                 Clear
             </li>
         </ul>
@@ -32,7 +34,7 @@
                     class = "float-left" 
                     />
                     <div class = "float-left"> 
-                        <strong>12</strong>
+                        <strong id="temperature">12</strong>
                         <span class="units">°F | °C</span>
                      </div>
                 </div> 
@@ -40,13 +42,16 @@
         <div class = "col-6">
             <ul>
                 <li>
-                    Precipitation: 0%
+                    Feels like: <span id="feels-like">0</span>°F
                 </li>
                 <li>
-                    Humidity: 73%
+                    Precipitation: <span id="precipitation">0</span>%
                 </li>
                 <li>
-                    Wind: 2 mi/hr
+                    Humidity:  <span id="humidity">73</span>%
+                </li>
+                <li> 
+                    Wind: <span id ="wind-speed">2</span>mi/hr
                 </li>
             </ul>
 
